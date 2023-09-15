@@ -1,11 +1,12 @@
 import tkinter as tk
+import tkinter.font
 from datetime import datetime
 import datetime as dt
 import piexif
 import glob
 import os
 import sys
-from ctypes import windll
+import ctypes
 import shutil
 import numpy as np
 
@@ -327,6 +328,13 @@ class NewGUI():
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("DateTakenFilename (File format YYMMDD_HHMM_*)")
+
+        # get fontsize
+        self.fontsize = 11
+        self.default_font = tk.font.nametofont("TkDefaultFont")
+        self.text_font = tk.font.nametofont("TkTextFont")
+        self.default_font.configure(size=self.fontsize)
+        self.text_font.configure(size=self.fontsize)
 
         # reset saved window position
         if os.path.isfile("DateTakenFilename.conf"):
