@@ -1,0 +1,11 @@
+/dist
+/releases
+/build
+/__pycache__
+/pyinstaller*
+/*.spec
+/versions
+/*.conf
+/*.bat
+/test
+/old_non_GUI
