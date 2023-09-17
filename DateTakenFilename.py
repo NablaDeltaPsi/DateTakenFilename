@@ -10,6 +10,8 @@ import ctypes
 import shutil
 import numpy as np
 
+version = '1.0'
+
 def blanks(number):
     string = ""
     for i in range(number):
@@ -327,7 +329,7 @@ class OwnMessagebox():
 class NewGUI():
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("DateTakenFilename (File format YYMMDD_HHMM_*)")
+        self.root.title("DateTakenFilename v" + version + " (File format YYMMDD_HHMM_*)")
 
         # get fontsize
         self.fontsize = 11
