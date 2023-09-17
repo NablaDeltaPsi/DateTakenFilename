@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.font
+import tkinter.messagebox # for pyinstaller
 from datetime import datetime
 import datetime as dt
 import piexif
@@ -10,7 +11,7 @@ import ctypes
 import shutil
 import numpy as np
 
-version = '1.0'
+version = '1.1'
 
 def blanks(number):
     string = ""
