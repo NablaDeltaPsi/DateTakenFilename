@@ -356,7 +356,7 @@ class NewGUI():
 
         # icon and DPI
         try:
-            self.root.iconbitmap('ico_imageres_dll0068.ico')
+            self.root.iconbitmap('DateTakenFilename.ico')
             self.root.update() # important: recalculate the window dimensions
         except:
             print("Found no icon.")
