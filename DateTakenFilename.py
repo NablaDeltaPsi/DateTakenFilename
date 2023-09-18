@@ -11,7 +11,7 @@ import ctypes
 import shutil
 import numpy as np
 
-version = '1.1'
+version = '1.2'
 
 def blanks(number):
     string = ""
@@ -403,7 +403,7 @@ class NewGUI():
         self.check_overwrite.set(configs[2])
         self.check_includetime.set(configs[3])
         self.check_nodateyet.set(configs[4])
-        self.check_backup.set(str2bool(configs[4]))
+        self.check_backup.set(configs[5])
         anzeige.add_checkbutton(label="Overwrite existing date_taken (#1)", onvalue=1, offvalue=0, variable=self.check_overwrite)
         anzeige.add_checkbutton(label="Include time (#1, #2)", onvalue=1, offvalue=0, variable=self.check_includetime)
         anzeige.add_checkbutton(label="Only prepend where no date yet (#2)", onvalue=1, offvalue=0, variable=self.check_nodateyet)
