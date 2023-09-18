@@ -11,7 +11,7 @@ import ctypes
 import shutil
 import numpy as np
 
-version = '1.2'
+version = '1.3'
 
 def blanks(number):
     string = ""
@@ -47,20 +47,20 @@ def load_files(entered_files):
 
     if len(entered_files) == 0:
         tk.messagebox.showerror(title="Error", message="Interrupt: Enter filenames!")
-        sys.exit()
+        return []
 
     if not os.path.isabs(os.path.dirname(entered_files)) or entered_files[0] == "\\":
         tk.messagebox.showerror(title="Error", message="Interrupt: Path (" + os.path.dirname(entered_files) + ") not valid!")
-        sys.exit()
+        return []
 
     for i in range(len(all_files)):
         if not os.path.isfile(all_files[i]):
             tk.messagebox.showerror(title="Error", message="Interrupt: " + all_files[i] + " is not a file!")
-            sys.exit()
+            return []
 
     if not all_files:
         tk.messagebox.showerror(title="Error", message="Couldn't find any files!")
-        sys.exit()
+        return []
     
     return all_files
 
@@ -460,6 +460,9 @@ class NewGUI():
     def process(self):
 
         all_files = load_files(self.entry_path.get())
+        
+        if not all_files:
+            return
         
         if self.radio_mode.get() == self.modes[0]:
             self.mode_1_name_to_date(all_files)
