@@ -11,7 +11,7 @@ import ctypes
 import shutil
 import numpy as np
 
-version = '1.3'
+version = '1.4'
 
 def blanks(number):
     string = ""
@@ -404,10 +404,10 @@ class NewGUI():
         self.check_includetime.set(configs[3])
         self.check_nodateyet.set(configs[4])
         self.check_backup.set(configs[5])
-        anzeige.add_checkbutton(label="Overwrite existing date_taken (#1)", onvalue=1, offvalue=0, variable=self.check_overwrite)
-        anzeige.add_checkbutton(label="Include time (#1, #2)", onvalue=1, offvalue=0, variable=self.check_includetime)
-        anzeige.add_checkbutton(label="Only prepend where no date yet (#2)", onvalue=1, offvalue=0, variable=self.check_nodateyet)
-        anzeige.add_checkbutton(label="Backup (#1, #2, #3)", onvalue=1, offvalue=0, variable=self.check_backup)
+        anzeige.add_checkbutton(label="Overwrite existing date_taken", onvalue=1, offvalue=0, variable=self.check_overwrite)
+        anzeige.add_checkbutton(label="Include time", onvalue=1, offvalue=0, variable=self.check_includetime)
+        anzeige.add_checkbutton(label="Only prepend where no date yet", onvalue=1, offvalue=0, variable=self.check_nodateyet)
+        anzeige.add_checkbutton(label="Backup", onvalue=1, offvalue=0, variable=self.check_backup)
         menubar.add_cascade(label="Options", menu=anzeige)
 
         # year
